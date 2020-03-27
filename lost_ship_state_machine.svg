@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="963px" preserveAspectRatio="none" style="width:265px;height:963px;" version="1.1" viewBox="0 0 265 963" width="265px" zoomAndPan="magnify">
+    <defs>
+        <filter height="300%" id="f71f7qi9nmlma" width="300%" x="-1" y="-1">
+            <feGaussianBlur result="blurOut" stdDeviation="2.0" />
+            <feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0" />
+            <feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3" />
+            <feBlend in="SourceGraphic" in2="blurOut3" mode="normal" />
+        </filter>
+    </defs>
+    <g>
+        <ellipse cx="129.5" cy="18" fill="#000000" filter="url(#f71f7qi9nmlma)" rx="10" ry="10" style="stroke: none; stroke-width: 1.0;" />
+        <rect fill="#FEFECE" filter="url(#f71f7qi9nmlma)" height="78.8867" rx="12.5" ry="12.5" style="stroke: #A80036; stroke-width: 1.5;" width="94" x="82.5" y="89" />
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="82.5" x2="176.5" y1="115.4883" y2="115.4883" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="61" x="99" y="107.5352">PreGame</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="68" x="87.5" y="132.0898">Name ships</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="69" x="87.5" y="146.2227">Name pilots</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="74" x="87.5" y="160.3555">Name scouts</text>
+        <rect fill="#FEFECE" filter="url(#f71f7qi9nmlma)" height="707.4883" rx="12.5" ry="12.5" style="stroke: #A80036; stroke-width: 1.5;" width="247" x="6" y="245" />
+        <rect fill="#FFFFFF" height="675" rx="12.5" ry="12.5" style="stroke: #FFFFFF; stroke-width: 1.0;" width="241" x="9" y="274.4883" />
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="6" x2="253" y1="271.4883" y2="271.4883" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="33" x="113" y="263.5352">Turn</text>
+        <ellipse cx="123" cy="294.4883" fill="#000000" filter="url(#f71f7qi9nmlma)" rx="10" ry="10" style="stroke: none; stroke-width: 1.0;" />
+        <rect fill="#FEFECE" filter="url(#f71f7qi9nmlma)" height="64.7539" rx="12.5" ry="12.5" style="stroke: #A80036; stroke-width: 1.5;" width="194" x="26" y="340.4883" />
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="26" x2="220" y1="366.9766" y2="366.9766" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="65" x="90.5" y="359.0234">StartTurn</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="61" x="31" y="383.5781">Spend fuel</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="174" x="31" y="397.7109">Increment leaps since incident</text>
+        <rect fill="#FEFECE" filter="url(#f71f7qi9nmlma)" height="40" rx="12.5" ry="12.5" style="stroke: #A80036; stroke-width: 1.5;" width="117" x="21.5" y="441.4883" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="107" x="26.5" y="466.7793">LeapIntoSystem</text>
+        <rect fill="#FEFECE" filter="url(#f71f7qi9nmlma)" height="40" rx="12.5" ry="12.5" style="stroke: #A80036; stroke-width: 1.5;" width="101" x="29.5" y="517.4883" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="91" x="34.5" y="542.7793">AssessThreat</text>
+        <rect fill="#FEFECE" filter="url(#f71f7qi9nmlma)" height="40" rx="12.5" ry="12.5" style="stroke: #A80036; stroke-width: 1.5;" width="50" x="54" y="593.4883" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="35" x="61.5" y="618.7793">Fight</text>
+        <rect fill="#FEFECE" filter="url(#f71f7qi9nmlma)" height="40" rx="12.5" ry="12.5" style="stroke: #A80036; stroke-width: 1.5;" width="122" x="17" y="669.4883" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="112" x="22" y="694.7793">SearchWreckage</text>
+        <rect fill="#FEFECE" filter="url(#f71f7qi9nmlma)" height="40" rx="12.5" ry="12.5" style="stroke: #A80036; stroke-width: 1.5;" width="116" x="22" y="745.4883" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="106" x="27" y="770.7793">ScanTheSystem</text>
+        <rect fill="#FEFECE" filter="url(#f71f7qi9nmlma)" height="40" rx="12.5" ry="12.5" style="stroke: #A80036; stroke-width: 1.5;" width="97" x="36.5" y="821.4883" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="87" x="41.5" y="846.7793">MakeRepairs</text>
+        <rect fill="#FEFECE" filter="url(#f71f7qi9nmlma)" height="40" rx="12.5" ry="12.5" style="stroke: #A80036; stroke-width: 1.5;" width="75" x="85.5" y="897.4883" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="65" x="90.5" y="922.7793">BuryDead</text>
+        <!--MD5=[e00391b10a64a6fe5cf0d2be4cc6dc0d]
+link *start*Turn to StartTurn-->
+        <path d="M123,304.5683 C123,312.2483 123,323.8083 123,335.1983 " fill="none" id="*start*Turn-&gt;StartTurn" style="stroke: #A80036; stroke-width: 1.0;" />
+        <polygon fill="#A80036" points="123,340.4083,127,331.4083,123,335.4083,119,331.4083,123,340.4083" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[5cc304c3d611efe33e182571fe701f96]
+link StartTurn to LeapIntoSystem-->
+        <path d="M107.23,405.7083 C102.12,415.9783 96.55,427.1983 91.78,436.7883 " fill="none" id="StartTurn-&gt;LeapIntoSystem" style="stroke: #A80036; stroke-width: 1.0;" />
+        <polygon fill="#A80036" points="89.51,441.3483,97.0805,435.0485,91.7232,436.8648,89.9069,431.5074,89.51,441.3483" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[6635178096b7be473eb9a4a977e0b450]
+link LeapIntoSystem to AssessThreat-->
+        <path d="M80,481.5483 C80,490.8783 80,502.2283 80,512.1783 " fill="none" id="LeapIntoSystem-&gt;AssessThreat" style="stroke: #A80036; stroke-width: 1.0;" />
+        <polygon fill="#A80036" points="80,517.2383,84,508.2383,80,512.2383,76,508.2383,80,517.2383" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[e9578b6888fcc17a9c383e3731d18b9d]
+link AssessThreat to Fight-->
+        <path d="M79.74,557.5483 C79.62,566.8783 79.46,578.2283 79.33,588.1783 " fill="none" id="AssessThreat-&gt;Fight" style="stroke: #A80036; stroke-width: 1.0;" />
+        <polygon fill="#A80036" points="79.26,593.2383,83.3626,584.2846,79.3171,588.2386,75.3631,584.1932,79.26,593.2383" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[ccc1b2483f273df733ee966a3dab0996]
+link Fight to SearchWreckage-->
+        <path d="M78.74,633.5483 C78.62,642.8783 78.46,654.2283 78.33,664.1783 " fill="none" id="Fight-&gt;SearchWreckage" style="stroke: #A80036; stroke-width: 1.0;" />
+        <polygon fill="#A80036" points="78.26,669.2383,82.3626,660.2846,78.3171,664.2386,74.3631,660.1932,78.26,669.2383" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[713acc20a6e3cfa7cf3cbd346a93e73e]
+link SearchWreckage to ScanTheSystem-->
+        <path d="M78.52,709.5483 C78.77,718.8783 79.07,730.2283 79.34,740.1783 " fill="none" id="SearchWreckage-&gt;ScanTheSystem" style="stroke: #A80036; stroke-width: 1.0;" />
+        <polygon fill="#A80036" points="79.48,745.2383,83.2467,736.1382,79.3511,740.2399,75.2493,736.3444,79.48,745.2383" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[5f11c4f5774a887f8ecdb51e5b5ad99e]
+link ScanTheSystem to MakeRepairs-->
+        <path d="M81.29,785.5483 C81.92,794.8783 82.69,806.2283 83.36,816.1783 " fill="none" id="ScanTheSystem-&gt;MakeRepairs" style="stroke: #A80036; stroke-width: 1.0;" />
+        <polygon fill="#A80036" points="83.7,821.2383,87.0731,811.9851,83.357,816.2501,79.092,812.5339,83.7,821.2383" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[fde9d73f3a26c9204d32c5b88d2762d3]
+link MakeRepairs to BuryDead-->
+        <path d="M94.79,861.5483 C99.67,871.0483 105.62,882.6483 110.8,892.7283 " fill="none" id="MakeRepairs-&gt;BuryDead" style="stroke: #A80036; stroke-width: 1.0;" />
+        <polygon fill="#A80036" points="113.12,897.2383,112.5724,887.4047,110.8384,892.7892,105.4539,891.0552,113.12,897.2383" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[8d6486a87f390d1bedc1213137102a01]
+link BuryDead to StartTurn-->
+        <path d="M132.55,897.1283 C145.49,869.0483 167,815.0683 167,766.4883 C167,536.4883 167,536.4883 167,536.4883 C167,491.9183 151.39,442.7783 138.76,410.3383 " fill="none" id="BuryDead-&gt;StartTurn" style="stroke: #A80036; stroke-width: 1.0;" />
+        <polygon fill="#A80036" points="136.92,405.6783,136.4963,415.518,138.7522,410.3305,143.9398,412.5864,136.92,405.6783" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[8fd14ff918762dc87b0c68ab4391675b]
+link *start to PreGame-->
+        <path d="M129.5,28.25 C129.5,40.58 129.5,63.24 129.5,83.8 " fill="none" id="*start-&gt;PreGame" style="stroke: #A80036; stroke-width: 1.0;" />
+        <polygon fill="#A80036" points="129.5,88.97,133.5,79.97,129.5,83.97,125.5,79.97,129.5,88.97" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[aadf6fa252fd66062de23da0af59c866]
+link PreGame to Turn-->
+        <path d="M129.5,168.2 C129.5,187.06 129.5,211.73 129.5,239.71 " fill="none" id="PreGame-&gt;Turn" style="stroke: #A80036; stroke-width: 1.0;" />
+        <polygon fill="#A80036" points="129.5,244.98,133.5,235.98,129.5,239.98,125.5,235.98,129.5,244.98" style="stroke: #A80036; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="67" x="130.5" y="211.5684">start game</text>
+        <!--MD5=[3d8f0f868e7d8ea01ba87348fe2d54d8]
+@startuml
+hide empty description
+
+[*] - -> PreGame
+
+PreGame : Name ships
+PreGame : Name pilots
+PreGame : Name scouts
+
+PreGame - -> Turn : start game
+
+state Turn {
+  [*] - -> StartTurn
+  StartTurn : Spend fuel
+  StartTurn : Increment leaps since incident
+  StartTurn - -> LeapIntoSystem
+  LeapIntoSystem - -> AssessThreat
+  AssessThreat - -> Fight
+  Fight - -> SearchWreckage
+  SearchWreckage - -> ScanTheSystem
+  ScanTheSystem - -> MakeRepairs
+  MakeRepairs - -> BuryDead
+  BuryDead - -> StartTurn
+}
+
+@enduml
+
+PlantUML version 1.2020.02(Sun Mar 01 05:22:07 EST 2020)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 13.0.2+8
+Operating System: Mac OS X
+Default Encoding: UTF-8
+Language: en
+Country: US
+-->
+    </g>
+</svg>

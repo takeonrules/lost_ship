@@ -1,0 +1,26 @@
+@startuml
+hide empty description
+
+[*] --> PreGame
+
+PreGame : Name ships
+PreGame : Name pilots
+PreGame : Name scouts
+
+PreGame --> Turn : start game
+
+state Turn {
+  [*] --> StartTurn
+  StartTurn : Spend fuel
+  StartTurn : Increment leaps since incident
+  StartTurn --> LeapIntoSystem
+  LeapIntoSystem --> AssessThreat
+  AssessThreat --> Fight
+  Fight --> SearchWreckage
+  SearchWreckage --> ScanTheSystem
+  ScanTheSystem --> MakeRepairs
+  MakeRepairs --> BuryDead
+  BuryDead --> StartTurn
+}
+
+@enduml
