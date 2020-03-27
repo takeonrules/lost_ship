@@ -3,7 +3,7 @@ module LostShip
   Schema = Dry::Schema.JSON do
     optional(:threat).hash do
       required(:round).filled(:integer, included_in?: (0..5).to_a)
-      required(:ships).array.scheam do
+      required(:ships).array.schema do
         required(:type).filled(:integer, included_in?: (1..3).to_a)
         required(:damage).filled(:integer, included_in?: (0..8).to_a)
       end
