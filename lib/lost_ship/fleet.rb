@@ -7,14 +7,19 @@ module LostShip
         @parts = parts
         @bscore = 0
         @leaps_since_incident = 0
+        @new_recruits = 0
+        @halfway_trained = 0
         @hull = Hull.new
         @sick_bay = SickBay.new
         @engines = Engines.new
         @mining_laser = MiningLaser.new
         @sensors = Sensors.new
         @scouting_bay = ScoutingBay.new
+        @pilots = (1..6).map do |i|
+          Pilot.new(name: "Pilot #{i}")
+        end
       end
-      attr_reader :name, :bscore, :fuel, :parts, :hull, :sick_bay, :engines, :mining_laser, :sensors, :scouting_bay, :leaps_since_incident
+      attr_reader :pilots, :new_recruits, :halfway_trained, :name, :bscore, :fuel, :parts, :hull, :sick_bay, :engines, :mining_laser, :sensors, :scouting_bay, :leaps_since_incident
 
       class Hull
         def initialize
@@ -92,7 +97,29 @@ module LostShip
       # KIA
       def initialize(name:)
         @name = name
-        @kills = 0
+        @kills = 3
+        @leaps_injured = 0
+      end
+      attr_reader :name, :kills, :leaps_injured
+
+      def to_s
+        attributes = []
+        if kills >= 6
+          attributes << "Ace"
+        elsif kills >= 3
+          attributes << "Vet"
+        end
+        if kills > 0
+          attributes << "K#{kills}"
+        end
+        if leaps_injured > 0
+          attributes << "I#{leaps_injured}"
+        end
+        if attributes.empty?
+          return name.to_s
+        else
+          return "#{name}: #{attributes.join(', ')}"
+        end
       end
     end
   end

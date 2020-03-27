@@ -2,21 +2,44 @@
 require "lost_ship/fleet"
 module LostShip
   module Screens
+    #         10        20        30        40        50        60        70        80
+    # ----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+
+    # Prometheus (Empathy-class Colony ship)             Leaps Since Incident: 5
+    #
+    # Fuel: 10                 Parts: 4                  B-Score: 12
+    #
+    # Hull+: 2 damage          Engines+: inop            Mining Laser+: 100%, 8 kills
+    # Scout Bay+: inop         Sick Bay+: inop           Sensors+: 100%
+    #
+    # __Pilots__ (10 char)                   __Scout Ships__ (10 char)
+    # 1) Athena: 2 kills                     a) Red One: 100%
+    # 2) Freya: 18 kills, injured 2 leaps    b) Red Two: 50%
+    # 3) Artemis: 0 kills                    c) Red Three: inop
+    # 4) Hera: 4 kills                       d) Red Four: 100%
+    # 5) Xena: 1 kills, injured 1 leap       e) Red Five: inop
+    #                                        f) Red Five: 100%
+    # Training: 0 new recruits; 1 at 50% trained
+    #
+    # <include LaunchStatus>
     class Status
-      def initialize(output_buffer: $stdout)
+      def initialize(output_buffer: $stdout, with_ruler: true)
         @colony_ship = Fleet::ColonyShip.new(name: "Prometheus")
         @output_buffer = output_buffer
+        @with_ruler = with_ruler
       end
-      attr_reader :output_buffer
+      attr_reader :output_buffer, :with_ruler
 
       TWO_COLUMN_SPRINTF = "%-39s %-40s"
-      THREE_COLUMN_SPRINTF = "%-26s %-25s %-26s"
+      THREE_COLUMN_SPRINTF = "%-26s %-26s %-26s"
+      TWO_COLUMN_FIRST_WIDE_SPRINTF = "%-53s %-26s"
       def render
-        output_buffer.puts %(        10        20        30        40        50        60        70        80)
-        output_buffer.puts %(----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+)
+        if with_ruler
+          output_buffer.puts %(        10        20        30        40        50        60        70        80)
+          output_buffer.puts %(----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+)
+        end
         output_buffer.puts sprintf(
-          TWO_COLUMN_SPRINTF,
-          "#{@colony_ship.name} (Empathy-class)",
+          TWO_COLUMN_FIRST_WIDE_SPRINTF,
+          "#{@colony_ship.name} (Empathy-class Colony Ship)",
           "Leaps Since Incident: #{@colony_ship.leaps_since_incident}"
         )
         output_buffer.puts ""
@@ -39,27 +62,27 @@ module LostShip
           @colony_ship.sick_bay,
           @colony_ship.sensors,
         )
+        output_buffer.puts ""
+        output_buffer.puts sprintf(
+          TWO_COLUMN_SPRINTF,
+          "__Pilots__",
+          "__Scout Ships__"
+        )
+        (0..5).each do |i|
+          output_buffer.puts sprintf(
+            TWO_COLUMN_SPRINTF,
+            @colony_ship.pilots[i],
+            ""
+          )
+        end
+        output_buffer.puts ""
+        output_buffer.puts "Training: #{@colony_ship.new_recruits} new recruit(s); #{@colony_ship.halfway_trained} at 50% trained"
+        if with_ruler
+          output_buffer.puts %(----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+)
+          output_buffer.puts %(        10        20        30        40        50        60        70        80)
+        end
+
       end
-      #         10        20        30        40        50        60        70        80
-      # ----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+
-      # Prometheus (Empathy-class)             Leaps Since Incident: 5
-      #
-      # Fuel: 10                 Parts: 4                  B-Score: 12
-      #
-      # Hull+: 2 damage          Engines+: inop            Mining Laser+: 100%, 8 kills
-      # Scout Bay+: inop         Sick Bay+: inop           Sensors+: 100%
-      #
-      # __Scout Ships__ (10 char)               __Pilots__ (10 char)
-      # a) Red One: 100%                        1) Athena: 2 kills
-      # b) Red Two: 50%                         2) Freya: 18 kills, injured 2 leaps
-      # c) Red Three: inop                      3) Artemis: 0 kills
-      # d) Red Four: 100%                       4) Hera: 4 kills
-      # e) Red Five: inop                       5) Xena: 1 kill, injured 1 leap
-      # f) Red Five: 100%
-      #
-      # Training: 0 new recruits; 1 at 50% trained
-      #
-      # <include LaunchStatus>
     end
 
     class LaunchPrompt
