@@ -1,6 +1,5 @@
 require 'dry/schema'
 module LostShip
-  begin
   Schema = Dry::Schema.JSON do
     optional(:threat).hash do
       required(:round).filled(:integer, included_in?: (0..5).to_a)
@@ -79,8 +78,4 @@ module LostShip
       end
     end
   end
-rescue => e
-  puts e.backtrace
-  raise e
-end
 end
