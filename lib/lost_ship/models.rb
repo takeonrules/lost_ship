@@ -1,6 +1,6 @@
-require 'lost_ship/structs/game'
+require 'lost_ship/models/game'
 module LostShip
   # The container for all the structured game state.
-  module Structs
+  module Models
   end
 end

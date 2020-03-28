@@ -1,7 +1,7 @@
 require 'dry/struct'
-require 'lost_ship/structs/types'
+require 'lost_ship/models/types'
 module LostShip
-  module Structs
+  module Models
     class Ship < Dry::Struct
       transform_keys(&:to_sym)
       attribute :name, Dry::Types['strict.string']

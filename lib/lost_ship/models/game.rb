@@ -1,9 +1,9 @@
 require 'dry/struct'
-require 'lost_ship/structs/types'
-require 'lost_ship/structs/threat'
-require 'lost_ship/structs/fleet'
+require 'lost_ship/models/types'
+require 'lost_ship/models/threat'
+require 'lost_ship/models/fleet'
 module LostShip
-  module Structs
+  module Models
     class Game < Dry::Struct
       transform_keys(&:to_sym)
       attribute? :threat, Types.Constructor(Threat)

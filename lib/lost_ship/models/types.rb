@@ -1,6 +1,6 @@
 require 'dry-types'
 module LostShip
-  module Structs
+  module Models
     module Types
       include Dry.Types()
     end

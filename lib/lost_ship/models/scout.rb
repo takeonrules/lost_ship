@@ -1,8 +1,8 @@
 require 'dry/struct'
 require 'dry/schema'
-require 'lost_ship/structs/types'
+require 'lost_ship/models/types'
 module LostShip
-  module Structs
+  module Models
     class Scout < Dry::Struct
       transform_keys(&:to_sym)
       attribute :name, Dry::Types['coercible.string']

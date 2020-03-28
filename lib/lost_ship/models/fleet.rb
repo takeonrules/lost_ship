@@ -1,11 +1,11 @@
 require 'dry/struct'
-require 'lost_ship/structs/types'
-require 'lost_ship/structs/formation_slot'
-require 'lost_ship/structs/ship'
-require 'lost_ship/structs/scout'
-require 'lost_ship/structs/pilot'
+require 'lost_ship/models/types'
+require 'lost_ship/models/formation_slot'
+require 'lost_ship/models/ship'
+require 'lost_ship/models/scout'
+require 'lost_ship/models/pilot'
 module LostShip
-  module Structs
+  module Models
     class Fleet < Dry::Struct
       transform_keys(&:to_sym)
       attribute? :formation, Dry::Types['coercible.array'].of(FormationSlot)

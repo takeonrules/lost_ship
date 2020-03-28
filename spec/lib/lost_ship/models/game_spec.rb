@@ -1,8 +1,8 @@
 require 'spec_helper'
-require 'lost_ship/structs/game'
+require 'lost_ship/models/game'
 
 module LostShip
-  module Structs
+  module Models
     RSpec.describe Game do
       let(:base_game) { load_fixture(filename: "base-game.json") }
       describe "::Schema" do

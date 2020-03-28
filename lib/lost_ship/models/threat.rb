@@ -1,7 +1,7 @@
 require 'dry/struct'
 require 'dry/schema'
 module LostShip
-  module Structs
+  module Models
     class Threat < Dry::Struct
       transform_keys(&:to_sym)
       attribute :round, Dry::Types['strict.integer']
