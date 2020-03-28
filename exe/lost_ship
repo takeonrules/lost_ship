@@ -11,7 +11,11 @@ module LostShip
       class Start < Dry::CLI::Command
         require "lost_ship/models/game"
         desc "Start a game of W.M. Akers' “Lost Ship”"
-        argument :filename, required: true, desc: "Filename where we should write the game state"
+        argument(
+          :filename,
+          default: ENV.fetch("LOST_SHIP_GAME", "./lost-ship.json"),
+          desc: "Filename (default: #{ENV.fetch("LOST_SHIP_GAME", "./lost-ship.json")}) to write your game"
+        )
 
         def call(filename:, **)
           puts "Starting a game of Lost Ship"
