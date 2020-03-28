@@ -1,6 +1,5 @@
 require "lost_ship/version"
-require "lost_ship/schema"
-require "lost_ship/state/game"
+require "lost_ship/structs"
 require "json"
 
 module LostShip
@@ -9,17 +8,17 @@ module LostShip
 
   # @param path [String] the path to the JSON state of a game.
   #
-  # @return LostShip::Game set to the given state.
+  # @return LostShip::Structs::Game set to the given state.
   # @raise LostShip::InvalidGameStateError when file at the given path
   #        is not a valid game state.
   #
-  # @see LostShip::Schema for valid schema structure.
+  # @see LostShip::Structs::Schema for valid schema structure.
   def self.load_from(path:)
     document = File.read(path)
     json = JSON.parse(document)
-    schema_result = Schema.call(json)
+    schema_result = Structs::Schema.call(json)
     if schema_result.success?
-      Game.new(json)
+      Structs::Game.new(json)
     else
       raise InvalidGameStateError, schema_result.errors.to_h.inspect
     end

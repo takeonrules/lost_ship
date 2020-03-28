@@ -7,7 +7,7 @@ RSpec.describe LostShip do
   describe ".load_from" do
     context 'with a valid game' do
       it 'instantiates a Game object' do
-        expect(described_class.load_from(path: fixture_path(filename: "base-game.json") )).to be_a(LostShip::Game)
+        expect(described_class.load_from(path: fixture_path(filename: "base-game.json") )).to be_a(LostShip::Structs::Game)
       end
     end
     context 'with an invalid game' do
