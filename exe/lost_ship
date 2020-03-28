@@ -9,9 +9,11 @@ module LostShip
       extend Dry::CLI::Registry
 
       class Start < Dry::CLI::Command
-        require "lost_ship/models/fleet"
+        require "lost_ship/models/game"
         desc "Start a game of W.M. Akers' “Lost Ship”"
-        def call(*)
+        argument :filename, required: true, desc: "Filename where we should write the game state"
+
+        def call(filename:, **)
           puts "Starting a game of Lost Ship"
           ship_name = ::Readline.readline("Name your Colony ship: ", true)
           puts ""
@@ -32,10 +34,9 @@ module LostShip
           game = Models::Game.start(
             ship_name: ship_name,
             pilot_names: pilot_names,
-            scouts: scout_names
+            scout_names: scout_names
           )
-          require 'byebug'; debugger; true
-          fleet
+          game.write!(filename: filename)
         end
       end
 
