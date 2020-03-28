@@ -2,6 +2,7 @@ PATH
   remote: .
   specs:
     lost_ship (0.1.0)
+      dry-initializer (~> 3.0)
       dry-schema (~> 1.5)
       dry-struct (~> 1.0)
 

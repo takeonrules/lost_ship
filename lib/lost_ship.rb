@@ -9,6 +9,9 @@ module LostShip
   # @param path [String] the path to the JSON state of a game
   #
   # @return LostShip::Game set to the given state
+  # @raise LostShip::InvalidGameStateError when file at the given path
+  #        is not a valid game state.
+  # @see LostShip::Schema
   def self.load_from(path:)
     document = File.read(path)
     json = JSON.parse(document)
