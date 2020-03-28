@@ -1,0 +1,84 @@
+{
+  "fleet": {
+    "ship": {
+      "leaps_since_incident": 0,
+      "fuel": 6,
+      "parts": 6,
+      "bscore": 0,
+      "new_recruits": 0,
+      "halfway_trained_recruits": 0,
+      "hull": {
+        "damage": 0,
+        "upgraded": false
+      },
+      "engines": {
+        "status": 100,
+        "upgraded": false
+      },
+      "mining_laser": {
+        "status": 100,
+        "upgraded": false
+      },
+      "scout_bay": {
+        "status": 100,
+        "upgraded": false
+      },
+      "sick_bay": {
+        "status": 100,
+        "upgraded": false
+      },
+      "sensors": {
+        "status": 100,
+        "upgraded": false
+      }
+    },
+    "scouts": [
+      {
+        "name": "Red One",
+        "status": 100
+      }, {
+        "name": "Red Two",
+        "status": 100
+      }, {
+        "name": "Red Three",
+        "status": 100
+      }, {
+        "name": "Red Four",
+        "status": 100
+      }, {
+        "name": "Red Five",
+        "status": 100
+      }, {
+        "name": "Red Six",
+        "status": 100
+      }
+    ],
+    "pilots": [
+      {
+        "name": "Apollo",
+        "kills": 0,
+        "status": 100
+      }, {
+        "name": "Bast",
+        "kills": 0,
+        "status": 100
+      }, {
+        "name": "Circe",
+        "kills": 0,
+        "status": 100
+      }, {
+        "name": "Dionysus",
+        "kills": 0,
+        "status": 100
+      }, {
+        "name": "Enlil",
+        "kills": 0,
+        "status": 100
+      }, {
+        "name": "Freya",
+        "kills": 0,
+        "status": 100
+      }
+    ]
+  }
+}

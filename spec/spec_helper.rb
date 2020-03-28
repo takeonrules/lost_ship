@@ -5,8 +5,11 @@ require "json"
 module LostShip
   module SpecSupport
     def load_fixture(filename:)
-      content = File.read(File.expand_path("../fixtures/#{filename}", __FILE__))
+      content = File.read(fixture_path(filename: filename))
       JSON.parse(content)
+    end
+    def fixture_path(filename:)
+      File.expand_path("../fixtures/#{filename}", __FILE__)
     end
   end
 end
