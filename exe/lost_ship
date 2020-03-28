@@ -2,19 +2,25 @@
 require "bundler/setup"
 require "dry/cli"
 require "readline"
+require "lost_ship/models/game"
+require "lost_ship"
 
 module LostShip
   module CLI
     module Commands
       extend Dry::CLI::Registry
 
+      class << self
+        attr_accessor :lost_ship_game
+      end
+      self.lost_ship_game = ENV.fetch("LOST_SHIP_GAME", "./lost-ship.json")
+
       class Start < Dry::CLI::Command
-        require "lost_ship/models/game"
         desc "Start a game of W.M. Akers' “Lost Ship”"
         argument(
           :filename,
-          default: ENV.fetch("LOST_SHIP_GAME", "./lost-ship.json"),
-          desc: "Filename (default: #{ENV.fetch("LOST_SHIP_GAME", "./lost-ship.json")}) to write your game"
+          default: Commands.lost_ship_game,
+          desc: "Filename (default: #{Commands.lost_ship_game}) to write your game"
         )
 
         def call(filename:, **)
@@ -44,7 +50,21 @@ module LostShip
         end
       end
 
+      class Play < Dry::CLI::Command
+        desc "Play a game of W.M. Akers' “Lost Ship”"
+        argument(
+          :filename,
+          default: Commands.lost_ship_game,
+          desc: "Filename (default: #{Commands.lost_ship_game}) to write your game"
+        )
+        def call(filename:, **)
+          LostShip.load_from(filename: filename)
+        end
+      end
+
       register "start", Start, aliases: ["s"]
+      register "play", Play, aliases: ["p"]
+
     end
   end
 end

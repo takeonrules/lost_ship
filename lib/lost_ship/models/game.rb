@@ -17,6 +17,12 @@ module LostShip
         )
       end
 
+      def self.load_from(filename:)
+        document = File.read(filename)
+        json = JSON.load(document)
+        puts json
+      end
+
       transform_keys(&:to_sym)
       attribute? :threat, Types.Constructor(Threat)
       attribute :fleet, Types.Constructor(Fleet)
