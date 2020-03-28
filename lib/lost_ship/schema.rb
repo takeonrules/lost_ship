@@ -1,5 +1,9 @@
 require 'dry/schema'
 module LostShip
+  # Responsible for tracking the game state
+  #
+  # There is no conceptual model of the state machine for how the turns
+  # progress. Without that model, this is an incomplete schema.
   Schema = Dry::Schema.JSON do
     optional(:threat).hash do
       required(:round).filled(:integer, included_in?: (0..5).to_a)
