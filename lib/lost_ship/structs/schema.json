@@ -1,0 +1,45 @@
+{
+  "$id": "http://takeonrules.com/schemas/lost_ship.schema.json",
+  "title": "Lost Ship schema",
+  "description": "An unapproved JSON schema to store game state for “Lost Ship” by W.M. Acker",
+  "type": "object",
+  "required": ["threat", "fleet"],
+  "properties": {
+    "threat": {
+      "description": "The current state of the threat faced in Lost Ship",
+      "type": "object",
+      "required": ["round", "ships"],
+      "properties": {
+        "round": {
+          "type": "integer",
+          "description": "The last round of combat completed",
+          "minimum": 0,
+          "maximum": 5
+        },
+        "ships": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["type", "damage"],
+            "properties": {
+              "type": {
+                "type": "integer",
+                "minimum": "1",
+                "maximum": "3"
+              },
+              "damage": {
+                "type": "integer",
+                "minimum": "0",
+                "maximum": "8"
+              }
+            }
+          }
+        }
+      }
+    },
+    "fleet": {
+      "description": "The current state of the fleet in Lost Ship",
+      "type": "object"
+    }
+  }
+}

@@ -1,0 +1,31 @@
+#!/usr/bin/env ruby
+require "bundler/setup"
+require "dry/cli"
+require "readline"
+
+module LostShip
+  module CLI
+    module Commands
+      extend Dry::CLI::Registry
+
+      class Start < Dry::CLI::Command
+        desc "Start a game of W.M. Akers' “Lost Ship”"
+        def call(*)
+          puts "Starting a game of Lost Ship"
+          colony_ship_name = ::Readline.readline("Name your Colony ship: ", true)
+          puts ""
+          scout_ship_names = (1..6).map do |i|
+            ::Readline.readline("Name scout ship #{i}: ", true)
+          end
+          puts ""
+          puts "#{colony_ship_name} (Empathy-class Colony Ship)"
+          puts "Scout Ships: #{scout_ship_names.join(', ')}"
+        end
+      end
+
+      register "start", Start, aliases: ["s"]
+    end
+  end
+end
+
+Dry::CLI.new(LostShip::CLI::Commands).call

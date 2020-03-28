@@ -1,4 +1,5 @@
 require "lost_ship/version"
+require 'lost_ship/schemas/game'
 require "lost_ship/structs"
 require "json"
 
@@ -16,7 +17,7 @@ module LostShip
   def self.load_from(path:)
     document = File.read(path)
     json = JSON.parse(document)
-    schema_result = Structs::Schema.call(json)
+    schema_result = Schemas::Game.call(json)
     if schema_result.success?
       Structs::Game.new(json)
     else
