@@ -32,6 +32,43 @@ module LostShip
       attribute :scout_bay, Types.Constructor(ScoutBay)
       class Sensors < Upgradeable;end
       attribute :sensors, Types.Constructor(Sensors)
+
+      COMPONENT_STATUS_RANGE = [0,33,66,100]
+
+      Schema = Dry::Schema.JSON do
+        required(:name).filled(:string)
+        required(:leaps_since_incident).filled(:integer, gteq?: 0)
+        required(:fuel).filled(:integer, gteq?: 0)
+        required(:parts).filled(:integer, gteq?: 0)
+        required(:bscore).filled(:integer, gteq?: 0)
+        required(:hull).hash do
+          required(:damage).value(:integer, included_in?: (0..7).to_a)
+          required(:upgraded).filled(:bool?)
+        end
+        required(:new_recruits).filled(:integer, included_in?: (0..6).to_a)
+        required(:halfway_trained_recruits).filled(:integer, included_in?: (0..6).to_a)
+
+        required(:engines).hash do
+          required(:status).filled(:integer, included_in?: COMPONENT_STATUS_RANGE)
+          required(:upgraded).filled(:bool?)
+        end
+        required(:mining_laser).hash do
+          required(:status).filled(:integer, included_in?: COMPONENT_STATUS_RANGE)
+          required(:upgraded).filled(:bool?)
+        end
+        required(:scout_bay).hash do
+          required(:status).filled(:integer, included_in?: COMPONENT_STATUS_RANGE)
+          required(:upgraded).filled(:bool?)
+        end
+        required(:sick_bay).hash do
+          required(:status).filled(:integer, included_in?: COMPONENT_STATUS_RANGE)
+          required(:upgraded).filled(:bool?)
+        end
+        required(:sensors).hash do
+          required(:status).filled(:integer, included_in?: COMPONENT_STATUS_RANGE)
+          required(:upgraded).filled(:bool?)
+        end
+      end
     end
   end
 end

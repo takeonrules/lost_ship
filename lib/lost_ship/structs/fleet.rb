@@ -12,6 +12,13 @@ module LostShip
       attribute :ship, Types.Constructor(Ship)
       attribute :scouts, Dry::Types['coercible.array'].of(Scout)
       attribute :pilots, Dry::Types['coercible.array'].of(Pilot)
+
+      Schema = Dry::Schema.JSON do
+        optional(:formation).array(FormationSlot::Schema)
+        required(:ship).hash(Ship::Schema)
+        required(:scouts).array(Scout::Schema)
+        required(:pilots).array(Pilot::Schema)
+      end
     end
   end
 end

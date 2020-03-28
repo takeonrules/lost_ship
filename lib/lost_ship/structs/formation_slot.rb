@@ -1,4 +1,5 @@
 require 'dry/struct'
+require 'dry/schema'
 require 'lost_ship/structs/types'
 module LostShip
   module Structs
@@ -6,6 +7,11 @@ module LostShip
       transform_keys(&:to_sym)
       attribute :pilot_index, Dry::Types['strict.integer']
       attribute :scout_index, Dry::Types['strict.integer']
+
+      Schema = Dry::Schema.JSON do
+        required(:pilot_index).filled(:integer, gt?: 0)
+        required(:scout_index).filled(:integer, gt?: 0)
+      end
     end
   end
 end
