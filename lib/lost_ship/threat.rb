@@ -1,5 +1,4 @@
 require 'dry/struct'
-
 module LostShip
   class Threat < Dry::Struct
     transform_keys(&:to_sym)

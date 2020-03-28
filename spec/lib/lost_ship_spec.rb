@@ -5,6 +5,11 @@ RSpec.describe LostShip do
   end
 
   describe ".load_from" do
+    context 'with a valid game' do
+      it 'instantiates a Game object' do
+        expect(described_class.load_from(path: fixture_path(filename: "base-game.json") )).to be_a(LostShip::Game)
+      end
+    end
     context 'with an invalid game' do
       it "raises an error" do
         expect do
