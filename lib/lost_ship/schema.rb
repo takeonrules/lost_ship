@@ -24,7 +24,7 @@ module LostShip
           required(:upgraded).filled(:bool?)
         end
         required(:new_recruits).filled(:integer, included_in?: (0..6).to_a)
-        required(:halfway_trained).filled(:integer, included_in?: (0..6).to_a)
+        required(:halfway_trained_recruits).filled(:integer, included_in?: (0..6).to_a)
 
         SHIP_COMPONENT_STATUS_RANGE = [0,33,66,100]
         required(:engines).hash do
@@ -39,7 +39,7 @@ module LostShip
           required(:status).filled(:integer, included_in?: SHIP_COMPONENT_STATUS_RANGE)
           required(:upgraded).filled(:bool?)
         end
-        required(:sick_back).hash do
+        required(:sick_bay).hash do
           required(:status).filled(:integer, included_in?: SHIP_COMPONENT_STATUS_RANGE)
           required(:upgraded).filled(:bool?)
         end
@@ -60,7 +60,7 @@ module LostShip
       ]
       required(:scouts).array(:hash) do
         required(:name).filled(:string, max_size?: 10)
-        required(:damage).filled(:integer, included_in?: SCOUT_STATUS_RANGE)
+        required(:status).filled(:integer, included_in?: SCOUT_STATUS_RANGE)
       end
       PILOT_STATUS_HEALTHY = 100
       PILOT_STATUS_INJURED = 66
