@@ -22,7 +22,6 @@ module LostShip
         )
 
         def call(filename:, **)
-          require "lost_ship/prompts/start"
           LostShip.prompt(:start, filename: filename)
         end
       end
@@ -54,6 +53,7 @@ module LostShip
 
       register "start", Start, aliases: ["s"]
       register "play", Play, aliases: ["p"]
+      register "launch", Launch, aliases: ["l"]
       register "status", Status
     end
   end

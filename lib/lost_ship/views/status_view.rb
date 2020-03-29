@@ -19,7 +19,7 @@ module LostShip
     # Training: 0 new recruits; 1 at 50% trained
     #
     # <include LaunchStatus>
-    class Status
+    class StatusView
       def self.render(**kwargs)
         new(**kwargs).render
       end
@@ -70,18 +70,7 @@ module LostShip
           colony_ship.sensors,
         )
         output_buffer.puts ""
-        output_buffer.puts sprintf(
-          TWO_COLUMN_SPRINTF,
-          "__Pilots__",
-          "__Scout Ships__"
-        )
-        (0..5).each do |i|
-          output_buffer.puts sprintf(
-            TWO_COLUMN_SPRINTF,
-            game.fleet.pilots[i].to_s,
-            game.fleet.scouts[i],
-          )
-        end
+        Views.render(:scouts_and_pilots, game: game)
         output_buffer.puts ""
         output_buffer.puts "Training: #{colony_ship.new_recruits} new recruit(s); #{colony_ship.halfway_trained_recruits} at 50% trained"
         if with_ruler

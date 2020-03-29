@@ -3,7 +3,7 @@ require 'readline'
 
 module LostShip
   module Prompts
-    class Start
+    class StartPrompt
       def self.run(**kwargs)
         new(**kwargs).run
       end
