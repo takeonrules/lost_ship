@@ -21,11 +21,6 @@ module LostShip
         optional(:threat).hash(Threat::Schema)
         required(:fleet).hash(Fleet::Schema)
       end
-
-      def write!(filename:)
-        content = JSON.dump(self.to_h)
-        Dry::CLI::Utils::Files.write(filename, content)
-      end
     end
   end
 end

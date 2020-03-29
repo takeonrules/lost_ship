@@ -42,13 +42,13 @@ module LostShip
           puts "Scout Ships: #{scout_names.join(', ')}"
           puts "Pilots: #{pilot_names.join(', ')}"
 
-          game = LostShip.start(
+          LostShip.start(
             filename: filename,
             ship_name: ship_name,
             pilot_names: pilot_names,
-            scout_names: scout_names
+            scout_names: scout_names,
+            filename: filename
           )
-          game.write!(filename: filename)
         end
       end
 
