@@ -43,7 +43,6 @@ module LostShip
           puts "Pilots: #{pilot_names.join(', ')}"
 
           LostShip.start(
-            filename: filename,
             ship_name: ship_name,
             pilot_names: pilot_names,
             scout_names: scout_names,
