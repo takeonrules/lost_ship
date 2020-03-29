@@ -20,6 +20,10 @@ module LostShip
     #
     # <include LaunchStatus>
     class Status
+      def self.render(**kwargs)
+        new(**kwargs).render
+      end
+
       def initialize(game:, output_buffer: $stdout, with_ruler: true)
         @game = game
         @output_buffer = output_buffer

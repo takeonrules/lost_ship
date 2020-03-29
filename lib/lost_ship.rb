@@ -1,5 +1,7 @@
 require "lost_ship/version"
 require "lost_ship/models"
+require "lost_ship/prompts"
+require "lost_ship/views"
 require "json"
 
 module LostShip
@@ -29,6 +31,15 @@ module LostShip
   def self.write!(filename:, game:)
     content = JSON.dump(game.to_h)
     Dry::CLI::Utils::Files.write(filename, content)
+  end
+
+  def self.prompt(prompt_name, **kwargs)
+    Prompts.run(prompt_name, **kwargs)
+  end
+
+  def self.render(view_name, filename:, **kwargs)
+    game = load_from(filename: filename)
+    Views.render(view_name, game: game, **kwargs)
   end
 
   # @param ship_name [String] the name of the colony ship

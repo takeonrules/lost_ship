@@ -25,6 +25,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
   spec.add_dependency "dry-cli"
   spec.add_dependency "dry-initializer", "~> 3.0"
+  spec.add_dependency "dry-inflector", "~> 0.2.0"
   spec.add_dependency "dry-schema", "~> 1.5"
   spec.add_dependency "dry-struct", "~> 1.0"
   spec.add_development_dependency "byebug"
