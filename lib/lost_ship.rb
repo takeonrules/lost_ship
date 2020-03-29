@@ -23,4 +23,14 @@ module LostShip
       raise InvalidGameStateError, schema_result.errors.to_h.inspect
     end
   end
+
+  def self.start(ship_name:, scout_names:, pilot_names:)
+    Models::Game.new(
+      fleet: {
+        ship: { name: ship_name },
+        scouts: Array(scout_names).map { |name| { name: name } },
+        pilots: Array(pilot_names).map { |name| { name: name } }
+      }
+    )
+  end
 end

@@ -3,6 +3,7 @@ require "bundler/setup"
 require "dry/cli"
 require "readline"
 require "lost_ship/models/game"
+require "lost_ship/views/status"
 require "lost_ship"
 
 module LostShip
@@ -41,7 +42,8 @@ module LostShip
           puts "Scout Ships: #{scout_names.join(', ')}"
           puts "Pilots: #{pilot_names.join(', ')}"
 
-          game = Models::Game.start(
+          game = LostShip.start(
+            filename: filename,
             ship_name: ship_name,
             pilot_names: pilot_names,
             scout_names: scout_names
@@ -62,9 +64,23 @@ module LostShip
         end
       end
 
+      class Status < Dry::CLI::Command
+        desc "Output status of a game of W.M. Akers' “Lost Ship”"
+        argument(
+          :filename,
+          default: Commands.lost_ship_game,
+          desc: "Filename (default: #{Commands.lost_ship_game}) to write your game"
+        )
+
+        def call(filename:, **)
+          game = LostShip.load_from(filename: filename)
+          Views::Status.new(game: game).render
+        end
+      end
+
       register "start", Start, aliases: ["s"]
       register "play", Play, aliases: ["p"]
-
+      register "status", Status
     end
   end
 end

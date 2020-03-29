@@ -7,16 +7,6 @@ require 'json'
 module LostShip
   module Models
     class Game < Dry::Struct
-      def self.start(ship_name:, scout_names:, pilot_names:)
-        new(
-          fleet: {
-            ship: { name: ship_name },
-            scouts: Array(scout_names).map { |name| { name: name } },
-            pilots: Array(pilot_names).map { |name| { name: name } }
-          }
-        )
-      end
-
       def self.load_from(filename:)
         document = File.read(filename)
         json = JSON.load(document)

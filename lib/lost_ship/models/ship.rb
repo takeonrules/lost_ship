@@ -16,22 +16,55 @@ module LostShip
         transform_keys(&:to_sym)
         attribute :damage, Dry::Types['strict.integer'].default(0)
         attribute :upgraded, Dry::Types['params.bool'].default(false)
+        def to_s
+          text = "Hull"
+          text += "+" if upgraded
+          text += ": #{damage} damage"
+        end
       end
       attribute :hull, Types.Constructor(Hull).default { Hull.new }
+
       class Upgradeable < Dry::Struct
         transform_keys(&:to_sym)
         attribute :status, Dry::Types['strict.integer'].default(100)
         attribute :upgraded, Dry::Types['params.bool'].default(false)
+        def to_s
+          text = "#{name}"
+          text += "+" if upgraded
+          text += ": "
+          if status == 0
+            text += "inop"
+          else
+            text += "#{status}%"
+          end
+          text
+        end
       end
-      class Engines < Upgradeable; end
+      private_constant :Upgradeable
+
+      class Engines < Upgradeable
+        def name; "Engines"; end
+      end
       attribute :engines, Types.Constructor(Engines).default { Engines.new }
-      class MiningLaser < Upgradeable; end
+
+      class MiningLaser < Upgradeable
+        def name; "Minging Laser"; end
+      end
       attribute :mining_laser, Types.Constructor(MiningLaser).default { MiningLaser.new }
-      class SickBay < Upgradeable; end
+
+      class SickBay < Upgradeable
+        def name; "Sick Bay"; end
+      end
       attribute :sick_bay, Types.Constructor(SickBay).default { SickBay.new }
-      class ScoutBay < Upgradeable; end
+
+      class ScoutBay < Upgradeable
+        def name; "Scout Bay"; end
+      end
+
       attribute :scout_bay, Types.Constructor(ScoutBay).default { ScoutBay.new }
-      class Sensors < Upgradeable;end
+      class Sensors < Upgradeable
+        def name; "Sensors"; end
+      end
       attribute   :sensors, Types.Constructor(Sensors).default { Sensors.new }
 
       COMPONENT_STATUS_RANGE = [0,33,66,100]
