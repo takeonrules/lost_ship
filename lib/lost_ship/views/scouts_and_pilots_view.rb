@@ -30,6 +30,9 @@ module LostShip
       end
       private :colony_ship
 
+      INDEX_TO_LETTER = {
+        0 => "a", 1 => "b", 2 => "c", 3 => "d", 4 => "e", 5 => "f"
+      }
       TWO_COLUMN_SPRINTF = "%-39s %-40s"
       THREE_COLUMN_SPRINTF = "%-26s %-26s %-26s"
       TWO_COLUMN_FIRST_WIDE_SPRINTF = "%-53s %-26s"
@@ -46,8 +49,8 @@ module LostShip
         (0..5).each do |i|
           output_buffer.puts sprintf(
             TWO_COLUMN_SPRINTF,
-            game.fleet.pilots[i].to_s,
-            game.fleet.scouts[i],
+            "#{i+1}) #{game.fleet.pilots[i]}",
+            "#{INDEX_TO_LETTER.fetch(i)}) #{game.fleet.scouts[i]}",
           )
         end
         if with_ruler

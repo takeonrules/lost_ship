@@ -1,4 +1,4 @@
-require 'dry-initializer'
+require 'dry/initializer'
 require 'readline'
 
 module LostShip
@@ -7,14 +7,19 @@ module LostShip
     #
     #           10        20        30        40        50        60        70        80
     #   ----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+
-    #   __Scout Ships__ (10 char)               __Pilots__ (10 char)
-    #   a) Red One: 100%                        1) Athena: 2 kills
-    #   b) Red Two: 50%                         2) Freya: 18 kills, injured 2 leaps
-    #   c) Red Three: inop                      3) Artemis: 0 kills
-    #   d) Red Four: 100%                       4) Hera: 4 kills
-    #   e) Red Five: inop                       5) Xena: 1 kill, injured 1 leap
-    #   f) Red Five: 100%
+    #   __Pilots__                              __Scout Ships__
+    #   1) Apollo: K0                           a) Red One (100%)
+    #   2) Bast: K0                             b) Red Two (100%)
+    #   3) Circe: K0                            c) Red Three (100%)
+    #   4) Dionysus: K0                         d) Red Four (100%)
+    #   5) Enlil: K0                            e) Red Five (100%)
+    #   6) Freya: K0                            f) Red Six (100%)
+    #
+    #   Select pairings: 1a 2b 3c
     class LaunchAssignmentPrompt
+      def self.test
+        new(filename: "/Users/jfriesen/git/lost_ship/spec/fixtures/base-game.json").run
+      end
       def self.run(**kwargs)
         new(**kwargs).run
       end

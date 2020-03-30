@@ -53,7 +53,6 @@ module LostShip
 
       register "start", Start, aliases: ["s"]
       register "play", Play, aliases: ["p"]
-      register "launch", Launch, aliases: ["l"]
       register "status", Status
     end
   end
