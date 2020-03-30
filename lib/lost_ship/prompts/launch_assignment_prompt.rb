@@ -28,9 +28,24 @@ module LostShip
       option :game, default: -> { LostShip.load_from(filename: filename) }
 
       def run
+        puts "You may launch up to #{launchable_scouts} scouts"
         puts "Assign pilots to their scouts\n\n"
         Views.render(:scouts_and_pilots, game: game)
         puts ""
+        prompt = true
+        while prompt
+          input = ::Readline.readline(%(Select pairings (e.g. "1a b3"): ), true)
+          pairings = response
+          if pairings.size > launchable_scouts
+            puts "\tRetry. You may launch up #{launchable_scouts} scouts"
+          end
+        end
+      end
+
+      private
+
+      def launchable_scouts
+        3
       end
     end
   end
